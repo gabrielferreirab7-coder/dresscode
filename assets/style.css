@@ -1,0 +1,290 @@
+/* The Wedding Times — Manual de Vestimenta
+   Paleta e tipografia extraídas do convite original (CASAMENTO_.pdf). */
+
+:root {
+  /* Papel de jornal: levemente acinzentado, não creme quente. */
+  --papel: #f2f1ec;
+  --papel-bloco: #fbfaf7;
+  --tinta: #101010;
+  --tinta-forte: #000;
+  --tinta-suave: #171717;
+  --sepia: #231815;
+  --fio: rgba(16, 16, 16, 0.22);
+
+  --coluna: 34rem;
+  --gutter: clamp(1.25rem, 5vw, 2rem);
+
+  /* Fallbacks nativos escolhidos por proximidade de peso e largura, não por hábito:
+     Impact segura a manchete se Anton falhar; Georgia segura o corpo se Lora falhar. */
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --display: "Anton", Impact, "Haettenschweiler", "Arial Narrow", sans-serif;
+  --condensada: "League Gothic", "Arial Narrow", "Roboto Condensed", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: clamp(1.75rem, 7vw, 3rem) var(--gutter) 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.folha {
+  max-width: var(--coluna);
+  margin: 0 auto;
+  animation: entrada 0.45s ease-out both;
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ---------- Cabeçalho do jornal ---------- */
+
+.masthead {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Régua dupla: grossa em cima, fina embaixo. Assinatura de jornal impresso. */
+.regua-dupla {
+  height: 4px;
+  margin: clamp(0.9rem, 3vw, 1.15rem) 0 0;
+  border-top: 2.5px solid var(--tinta-forte);
+  border-bottom: 1px solid var(--tinta-forte);
+}
+
+.regua {
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--fio);
+}
+
+.cintilha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--tinta-forte);
+  font-family: var(--condensada);
+  font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.cintilha span:last-child {
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+}
+
+/* ---------- Manchete ---------- */
+
+.manchete {
+  margin: clamp(1.5rem, 6vw, 2.25rem) 0 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 13.5vw, 4.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--tinta-forte);
+}
+
+.deck {
+  margin: 0.85rem 0 clamp(1.5rem, 6vw, 2rem);
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--tinta-suave);
+}
+
+.olho {
+  display: block;
+  margin: 0 0 0.5rem;
+  font-family: var(--condensada);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+/* ---------- Chamadas (índice do jornal) ---------- */
+
+.indice {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 clamp(2rem, 8vw, 3rem);
+}
+
+.chamada {
+  display: block;
+  padding: 1.15rem 1.25rem 1.05rem;
+  background: var(--papel-bloco);
+  border: 1px solid var(--tinta-forte);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.chamada__caderno {
+  display: block;
+  font-family: var(--condensada);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.chamada__titulo {
+  margin: 0.3rem 0 0.55rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 7.5vw, 2.1rem);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: var(--tinta-forte);
+}
+
+.chamada__resumo {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--fio);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--tinta-suave);
+}
+
+.chamada__seta {
+  flex: none;
+  font-family: var(--condensada);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Inversão de tinta: o único gesto vivo da página. */
+.chamada:hover,
+.chamada:focus-visible,
+.chamada:active {
+  background: var(--tinta-forte);
+  color: var(--papel);
+}
+
+.chamada:hover .chamada__titulo,
+.chamada:focus-visible .chamada__titulo,
+.chamada:active .chamada__titulo,
+.chamada:hover .chamada__caderno,
+.chamada:focus-visible .chamada__caderno,
+.chamada:active .chamada__caderno,
+.chamada:hover .chamada__resumo,
+.chamada:focus-visible .chamada__resumo,
+.chamada:active .chamada__resumo {
+  color: var(--papel);
+}
+
+.chamada:hover .chamada__resumo,
+.chamada:focus-visible .chamada__resumo,
+.chamada:active .chamada__resumo {
+  border-top-color: rgba(242, 241, 236, 0.35);
+}
+
+/* ---------- Corpo de matéria (páginas internas) ---------- */
+
+.materia p {
+  margin: 0 0 1.1rem;
+}
+
+.materia p:last-child {
+  margin-bottom: 0;
+}
+
+.selo {
+  margin: 0 0 1.25rem;
+  padding: 0.45rem 0;
+  border-top: 2.5px solid var(--tinta-forte);
+  border-bottom: 1px solid var(--tinta-forte);
+  font-family: var(--condensada);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--tinta-forte);
+}
+
+.voltar {
+  display: inline-block;
+  margin: clamp(1.75rem, 7vw, 2.5rem) 0 0;
+  font-family: var(--condensada);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1px solid var(--tinta);
+  padding-bottom: 2px;
+}
+
+.voltar:hover,
+.voltar:focus-visible {
+  color: var(--sepia);
+  border-bottom-color: var(--sepia);
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  margin: clamp(2.5rem, 9vw, 3.5rem) 0 0;
+  padding: 0.75rem 0 clamp(2rem, 8vw, 3rem);
+  border-top: 1px solid var(--tinta-forte);
+  font-family: var(--condensada);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Acessibilidade ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--tinta-forte);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
