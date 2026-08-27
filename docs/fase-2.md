@@ -1,5 +1,5 @@
 # Fase 2 — QR Code e liberação da gráfica
-Status: Em andamento — arquivos gerados, aguardando montagem e teste impresso
+Status: Em andamento — QR impresso aprovado no Android; teste no iPhone pendente
 
 ---
 
@@ -49,6 +49,11 @@ gerar em cima de suposição, e o erro só aparece depois de impresso.
 - [ ] Exportar o jornal em PDF de impressão
 - [ ] **Imprimir em papel comum e escanear com câmera nativa de iPhone e de Android**
 - [ ] Só então liberar a gráfica
+
+### Resultado parcial do teste físico
+
+- [x] QR impresso em papel comum lido com sucesso pela câmera nativa de um Android em 27/08/2026
+- [ ] Repetir o teste impresso com a câmera nativa de um iPhone quando houver um disponível
 
 ---
 
