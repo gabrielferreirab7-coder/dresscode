@@ -1,5 +1,5 @@
 # Fase 2 — QR Code e liberação da gráfica
-Status: Pendente
+Status: Em andamento — arquivos gerados, aguardando montagem e teste impresso
 
 ---
 
@@ -18,10 +18,9 @@ gerar em cima de suposição, e o erro só aparece depois de impresso.
 
 ## Contexto Herdado da Fase 1
 
-[Preencher ao concluir a Fase 1]
-
-- URL de produção confirmada:
-- Data em que o Pages entrou no ar:
+- URL de produção confirmada: `https://gabrielferreirab7-coder.github.io/dresscode/`
+- Data em que o Pages entrou no ar: 27/08/2026
+- Deploy confirmado com sucesso e as três rotas respondendo HTTP 200
 - Resultado do teste no celular (4G):
 
 ---
@@ -41,9 +40,9 @@ gerar em cima de suposição, e o erro só aparece depois de impresso.
 
 ## Tarefas
 
-- [ ] Gerar `assets/qr/dresscode.svg` com correção de erro nível Q
-- [ ] Gerar `assets/qr/dresscode-2000.png` para quem não aceitar vetor
-- [ ] Escrever `assets/qr/README.md` com a spec de impressão abaixo
+- [x] Gerar `assets/qr/dresscode.svg` com correção de erro nível Q
+- [x] Gerar `assets/qr/dresscode-2000.png` para quem não aceitar vetor
+- [x] Escrever `assets/qr/README.md` com a spec de impressão abaixo
 - [ ] Escanear o SVG na tela só para validar o destino (teste preliminar, não vale como aprovação)
 - [ ] Substituir o placeholder do bloco DRESS CODE no Canva pelo QR mais uma linha curta
 - [ ] Conferir no Canva: QR sobre retângulo branco liso, sem textura de papel por baixo
