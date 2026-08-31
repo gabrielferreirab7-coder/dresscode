@@ -41,4 +41,14 @@
 .outfit-details dd{margin:0;font-family:var(--display);font-size:.9rem;line-height:1.25}
 .outfit-details small{display:block;margin-top:.35rem;font-size:.7rem;font-style:italic;line-height:1.25;opacity:.62}
 
-@media(max-width:760px){.grooms-card{display:block;padding:5rem 2rem 3rem}.grooms-copy h1{font-size:clamp(4rem,20vw,5.3rem)}.tie-note{font-size:.95rem}.outfit{margin-top:3.5rem;padding:3.25rem 0 0;border-top:1px solid rgba(23,19,19,.18);border-left:0}.outfit-visual{display:block;min-height:0}.outfit-visual img{height:25rem;object-position:center 38%}.outfit-caption{padding:1.6rem}.outfit-caption h2{font-size:3.2rem}.outfit-details{grid-template-columns:1fr 1fr}.outfit-details div{padding:1rem .7rem}.outfit-details div:nth-child(3){border-left:0}.outfit-details div:nth-child(n+3){border-top:1px solid rgba(23,19,19,.18)}}
+/* Legibilidade da página masculina */
+.grooms-page .guide-back{font-size:1.24rem}
+.grooms-page .guide-kicker{font-size:.99rem}
+.grooms-page .tie-note{font-size:1.3rem}
+.grooms-page .outfit-caption p{font-size:.88rem}
+.grooms-page .outfit-caption span{font-size:1.24rem}
+.grooms-page .outfit-details dt{font-size:.86rem}
+.grooms-page .outfit-details dd{font-size:1.17rem}
+.grooms-page .outfit-details small{font-size:.91rem}
+
+@media(max-width:760px){.grooms-card{display:block;padding:5rem 2rem 3rem}.grooms-copy h1{font-size:clamp(4rem,20vw,5.3rem)}.grooms-page .tie-note{font-size:1.23rem}.outfit{margin-top:3.5rem;padding:3.25rem 0 0;border-top:1px solid rgba(23,19,19,.18);border-left:0}.outfit-visual{display:block;min-height:0}.outfit-visual img{height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center}.outfit-caption{padding:1.6rem}.outfit-caption h2{font-size:3.2rem}.outfit-details{grid-template-columns:1fr 1fr}.outfit-details div{padding:1rem .7rem}.outfit-details div:nth-child(3){border-left:0}.outfit-details div:nth-child(n+3){border-top:1px solid rgba(23,19,19,.18)}}
