@@ -21,17 +21,35 @@
       </div>
       <section class="guide-palette" aria-labelledby="palette-title">
         <div class="palette-heading"><p>Paleta escolhida</p><h2 id="palette-title">Pink &amp; fúcsia</h2></div>
+        <p class="palette-instruction">Toque no tom que preferir para copiar o código.</p>
         <div class="swatches">
-          <figure><span style="--color:#b90c62"></span><figcaption>227 CP</figcaption></figure>
-          <figure><span style="--color:#b72071"></span><figcaption>P 80-16 C</figcaption></figure>
-          <figure><span style="--color:#c50c63"></span><figcaption>P 73-16 C</figcaption></figure>
-          <figure><span style="--color:#c91069"></span><figcaption>P 75-16 C</figcaption></figure>
-          <figure><span style="--color:#cf006d"></span><figcaption>233 CP</figcaption></figure>
-          <figure><span style="--color:#d10070"></span><figcaption>233 C</figcaption></figure>
+          <figure><button type="button" data-code="Pantone 227 CP" aria-label="Copiar Pantone 227 CP" style="--color:#b90c62"></button><figcaption>227 CP</figcaption></figure>
+          <figure><button type="button" data-code="Pantone P 80-16 C" aria-label="Copiar Pantone P 80-16 C" style="--color:#b72071"></button><figcaption>P 80-16 C</figcaption></figure>
+          <figure><button type="button" data-code="Pantone P 73-16 C" aria-label="Copiar Pantone P 73-16 C" style="--color:#c50c63"></button><figcaption>P 73-16 C</figcaption></figure>
+          <figure><button type="button" data-code="Pantone P 75-16 C" aria-label="Copiar Pantone P 75-16 C" style="--color:#c91069"></button><figcaption>P 75-16 C</figcaption></figure>
+          <figure><button type="button" data-code="Pantone 233 CP" aria-label="Copiar Pantone 233 CP" style="--color:#cf006d"></button><figcaption>233 CP</figcaption></figure>
+          <figure><button type="button" data-code="Pantone 233 C" aria-label="Copiar Pantone 233 C" style="--color:#d10070"></button><figcaption>233 C</figcaption></figure>
         </div>
+        <p class="palette-feedback" aria-live="polite">Selecione um tom</p>
         <p class="palette-note">Use os códigos Pantone como referência. A cor pode variar um pouco de uma tela para outra.</p>
       </section>
     </article>
   </main>
+  <script>
+    const feedback = document.querySelector('.palette-feedback');
+    document.querySelectorAll('.swatches button').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.code;
+        try {
+          await navigator.clipboard.writeText(code);
+          feedback.textContent = `${code} copiado`;
+        } catch {
+          feedback.textContent = code;
+        }
+        document.querySelectorAll('.swatches button').forEach((item) => item.classList.remove('is-selected'));
+        button.classList.add('is-selected');
+      });
+    });
+  </script>
 </body>
 </html>
